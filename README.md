@@ -1,1 +1,1 @@
-# omero_scripts
+# Custom omero server script collection
