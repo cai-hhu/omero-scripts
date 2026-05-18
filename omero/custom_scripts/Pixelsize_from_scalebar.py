@@ -52,6 +52,8 @@ def process_scalebars(conn, client, script_params):
         _, num, unit = name.split(":")
         px_size = str(float(num) / len_scale)
 
+        assert unit in UNIT_D, f"Unsupported unit: {unit} in scalebar name: {name} for Image:{img_id}"
+
         args = [
             "metadata", "pixelsize", f"Image:{img_id}",
             "--x", px_size, "--y", px_size, "--unit", UNIT_D[unit]
